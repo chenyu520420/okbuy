@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/okbuy.css"/>
+		<script src="js/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			body,html{width:100%}
+			.car_logo{width:1200px;margin:0 auto;height:60px;line-height: 60px;}
+			.car_logo p{font-size: 28px;}
+			.car{width:1200px;margin:0 auto;border-top:2px solid #D70057}
+			.top{width:1200px;border-bottom: 1px solid #999;height:80px}
+			.top1{width:110px;text-align: center;}
+			.top1 span{background: url(img/shoes/checkbox.png); background-position: 0 0;width:20px;height:20px;float: left;margin-left:30px}
+			.top1 b{float: left;margin-left:10px}
+			.top2{width:470px;text-align: center;}
+			.top3{width:110px;text-align: center;}
+			.top4{width:240px;text-align: center;}
+			.top5{width:110px;text-align: center;}
+			.top6{width:110px;text-align: center;}
+			.tejia{margin-left:110px;height:45px;padding-top:25px;border-bottom: 1px dashed #999;}
+			.tejia span{width:34px;height:20px;display: block;background: #d70057;font-size: 12px;color:#fff;text-align: center;line-height: 20px;}
+			.goods{width:1200px;margin:0 auto;height:100px;padding-top:50px}
+			.goods .td1 span{background: url(img/shoes/checkbox.png); background-position: 0 0;width:20px;height:20px;float: left;margin-left:30px}
+			li{float: left;}
+			.td1{width:110px;padding-top:20px}
+			.td2{width:530px;}
+			.td2 img{float: left;}
+			.td2 div{float: left;margin-left:22px;padding-top:20px}
+			.td2 div p{margin-bottom: 16px;}
+			.td3{width:168px;padding-top:20px}
+			.td4 button{width:35px;height:30px;border:1px solid #999;background:#fff;padding:0;float: left;}
+			.td4 b{width:45px;height:28px;float: left;line-height: 28px;text-align: center;border-top:1px solid #999;border-bottom: 1px solid #999;}
+			.td4{width:200px;padding-top:20px}
+			.td5{padding-top:20px;width:100px}
+			.td6{padding-top:20px; width:80px;}
+			.td6 i{margin-right:18px;background:url(img/shoes/carticon.png) no-repeat center;width:17px;height:17px;float: left;;background-position:-3px 0 ;}
+			.td6 b{background:url(img/shoes/carticon.png);background-position:-55px 0 ;float: left;;width:17px;height:17px;}
+			.account{width:1200px;height:60px;margin:20px auto}
+			.account .left{float:right;width:160px}
+			.account .left i{font-size: 18px;color:#d70057;}
+			.account button{float:right;width:160px;height:60px;background:#d70057;font-size:22px;color:#fff;line-height: 60px;text-align: center;}
+		</style>
+	</head>
+	<body>
+		<div class="shoes_top"></div>
+		<script>
+			$(".shoes_top").load("top.html")
+		</script>
+		<div class="car_logo">
+			<p>我的购物车</p>
+		</div>
+			<div class="car">
+				<table class="top">
+					<tr>
+						<td class="top1">
+							<span class="all"></span><b>全选</b>
+						</td>
+						<td class="top2">商品名称</td>
+						<td class="top3">单价</td>
+						<td class="top4">数量</td>
+						<td class="top5">小计</td>
+						<td class="top6">操作</td>
+					</tr>
+				</table>
+				<div id="box">
+					
+				</div>
+		</div>
+		<div class="account">
+			<button>去结算</button>
+			<div class="left">合计：<i>￥<b>0</b></i></div>
+		</div>
+		<script>
+			
+			var str=getCookie("username");
+			var str2="["+str+"]";
+			var arr=eval("("+str2+")");
+			var html="<div>";
+			for(var i=0;i<arr.length;i++){
+				html+="<div><div class=\"tejia\">"
+				html+=			"<span>特价</span>"
+				html+=		"</div>"
+				html+=		"<ul class=\"goods\">"
+				html+=				"<li class=\"td1\">"
+				html+=					"<span class=\"clicked\"></span>"
+				html+=				"</li>"
+				html+=				"<li class=\"td2\">"
+				html+=					"<img src=\""+arr[i].src+"\" alt=\"\" />"
+				html+=					"<div>"
+				html+=						"<p>"+arr[i].good+"</p>"
+				html+=						"尺寸:<span>"+arr[i].size+"</span>"
+				html+=					"</div>"
+				html+=				"</li>"
+				html+=				"<li class=\"td3\">"
+				html+=					"￥<i>"+arr[i].price+"</i>"
+				html+=				"</li>"
+				html+=				"<li class=\"td4\">"
+				html+=					"<button>-</button>"
+				html+=					"<b>"+arr[i].num+"</b>"
+				html+=					"<button>+</button>"
+				html+=				"</li>"
+				html+=				"<li class=\"td5\">"
+				html+=					"￥<i>"+arr[i].num*arr[i].price+"</i>"
+				html+=				"</li>"
+				html+=				"<li class=\"td6\">"
+				html+=					"<i class=\"like\"></i>"
+				html+=					"<b class=\"delete\"></b>"
+				html+=				"</li>"
+				html+=		"</ul></div>"
+			}
+			html+="</div>";
+			var box=document.getElementById("box");
+			box.innerHTML=html;
+			//var dele=document.getElementsByClassName("delete");
+			//for(var i=0;i<dele.length;i++){
+				//dele[i].
+				document.onclick=function(e){
+					var dele=e.target;
+					if(dele.className=="delete"){
+						
+					var str=getCookie("username");
+					var str2="["+str+"]";
+					var arr=eval("("+str2+")");
+					var the_tr=dele.parentNode.parentNode.parentNode
+					the_tr.remove();
+					var the_td=dele.parentNode.parentNode.children;
+					var good=the_td[1].children[1].children[0].innerHTML;
+					var size=the_td[1].children[1].children[1].innerHTML;
+					if(arr.length==1){
+						setCookie("username","",-1);
+						$("#shoopcar2>b").html("("+0+")")
+					}else{
+						for(var j=0;j<arr.length;j++){
+							if(arr[j].good==good&&arr[j].size==size){
+								str="";
+								for(var k=0;k<arr.length;k++){
+									if(k!=j&&arr.length!=1){
+										str+=(str==""?"":",")+"{good:'"+arr[k].good+"',price:'"+arr[k].price+"',size:'"+arr[k].size+"',num:'"+arr[k].num+"',src:'"+arr[k].src+"'}"
+									}
+								}
+								setCookie("username",str,15);
+								break;
+							}
+						}
+						var str3=getCookie("username");
+						var str4="["+str+"]";
+						var arr2=eval("("+str4+")");
+						var num=arr2.length;
+						$("#shoopcar2>b").html("("+num+")")
+					}
+				}
+				
+				}
+			//}  
+			var like=document.getElementsByClassName("like");
+			var like_sign=false;
+			for(var i=0;i<like.length;i++){
+				like[i].onclick=function(){
+					like_sign=!like_sign
+					if(like_sign){
+						this.style.backgroundPosition="-29px 0"
+					}else{
+						this.style.backgroundPosition="-3px 0"
+					}
+				}
+			}
+			var td4=document.getElementsByClassName("td4");
+			for(var i=0;i<td4.length;i++){
+				td4[i].children[0].onclick=function(){
+					if(this.parentNode.children[1].innerHTML!=1){
+						this.parentNode.children[1].innerHTML=this.parentNode.children[1].innerHTML-1
+						this.parentNode.parentNode.children[4].children[0].innerHTML=this.parentNode.children[1].innerHTML*this.parentNode.parentNode.children[2].children[0].innerHTML
+					}
+				}
+				td4[i].children[2].onclick=function(){
+					this.parentNode.children[1].innerHTML=+this.parentNode.children[1].innerHTML+1
+					this.parentNode.parentNode.children[4].children[0].innerHTML=this.parentNode.children[1].innerHTML*this.parentNode.parentNode.children[2 ].children[0].innerHTML
+					
+				}
+				
+			}
+			
+			var all=document.getElementsByClassName("all")[0];
+			var all_sign=false;
+			var clicked=document.getElementsByClassName("clicked");
+			var account=document.getElementsByClassName("left")[0].children[0].children[0];
+			for(var i=0;i<clicked.length;i++){
+				clicked.sign=false;
+				clicked[i].onclick=function(){
+					this.sign=!this.sign;
+					a();
+				}
+			}
+			all.onclick=function(){
+				all_sign=!all_sign;
+				if(all_sign){
+					for(var j in clicked){
+						clicked[j].sign=true;
+					}
+					all.style.backgroundPosition="-20px 0"
+				}else{
+					all.style.backgroundPosition="0 0"
+					for(var k in clicked){
+						clicked[k].sign=false;
+					}
+				}
+				a();
+			}
+			function a(){
+				account.innerHTML=0
+				for(var i=0;i<clicked.length;i++){
+						if(clicked[i].sign){
+							clicked[i].style.backgroundPosition="-20px 0";
+							
+							account.innerHTML=+account.innerHTML+ +clicked[i].parentNode.parentNode.children[4].children[0].innerHTML
+						}else{
+							clicked[i].style.backgroundPosition="0 0";
+						}
+				}
+			}
+
+			
+			
+		</script>
+	</body>
+</html>

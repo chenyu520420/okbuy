@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/login.css"/>
+		<script src="js/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<title>好乐买 正品鞋</title>
+	</head>
+	<body>
+		<div class="div_top"></div>
+		<div class="register_content">
+			<a class="AD" href=""></a>
+			<div class="register">
+				<div class="phonenum  div">
+					<span for="">手机号：</span>
+					<input type="text" placeholder="请输入正确的11位手机号码" />
+					<i><img src="img/zhuce/delete.png" alt="" /></i>
+					<b><img src="img/zhuce/vcodeicon.png" alt="" /></b>
+				</div>
+				<p class="error"></p>
+				
+				<div class="upassward div">
+					<span for="">密&nbsp;码：</span>
+					<input type="password" placeholder="请输入密码" />
+					<i><img src="img/zhuce/pwicon.png" alt="" /></i>
+					<b><img src="img/zhuce/vcodeicon.png" alt="" /></b>
+					<div class="strength">
+						<p>密码强度：</p>
+						<b>弱</b>
+						<b>中</b>
+						<b>高</b>
+					</div>
+				</div>
+				<p class="error"></p>
+				
+				<div class="yanzh">
+					<div class="code  div">
+						<span for="">验证码：</span>
+						<input type="text" placeholder="请输入验证码"/>
+						<i>1234</i>
+						<b>换一张</b>
+					</div>
+					<div class="code2  div">
+						<span for="">验证码：</span>
+						<input type="text" placeholder="请输入短信验证码"/>
+						<p><i>10</i>秒后重新获取</p>
+					</div>
+				</div>
+				<p class="error"></p>
+				
+				
+				
+				<div class="agree">
+                	注册即视为同意<a href="">《好乐买隐私协议》</a>
+				</div>
+				<button>注册</button>
+				
+			</div>
+		</div>
+		<div class="div_bottom"></div>
+	</body>
+	<script type="text/javascript">
+		$('.div_top').load("login.html .top")
+		$('.div_bottom').load("login.html .bottom");
+		var ipt=document.getElementsByTagName("input");
+		var oerror=document.getElementsByClassName("error");
+		var opassward=document.getElementsByClassName("upassward")[0];
+		var pw_ipt=opassward.children[1];
+		var seepw_img=opassward.children[2].children[0];
+		ipt[0].onfocus=function(){
+			ipt[0].onkeydown=function(){
+				$('i').eq(0).css('display','block')
+			}
+		}
+		ipt[0].onblur=function(){
+			var iptv=ipt[0].value;
+			for(var i=0;i<iptv.length;i++){
+				if(iptv.charCodeAt(i)>57||iptv.charCodeAt(i)<48||iptv.length!=11){
+					oerror[0].innerText="请输入正确的11位手机号码";
+					$('b:eq(0)>img').css("display","none")
+				}else{
+					oerror[0].innerText="";
+					$('b:eq(0)>img').css("display","block")
+				}
+				
+			}
+			if(iptv.length==0){
+				oerror[0].innerText="请输入手机号码！";
+			}
+		}
+		$('i').eq(0).click(function(){
+			ipt[0].value="";
+		})
+		
+		ipt[1].onfocus=function(){
+			oerror[1].innerText="6-16个字符，可用数字、字母、下划线";
+			oerror[1].style.color="#a9a9a9";
+			$('.strength').css("display","block")
+		}
+		ipt[1].onblur=function(){
+			if(ipt[1].value.length==0){
+				oerror[1].innerText="请输入密码！";
+				oerror[1].style.color="#DE5797";
+			}
+			else if(ipt[1].value.length<=5){
+				oerror[1].innerText="密码不能少于6位！";
+				oerror[1].style.color="#DE5797";
+			}
+			else if(ipt[1].value.length>=15){
+				oerror[1].innerText="密码不能多于于16位！";
+				oerror[1].style.color="#DE5797";
+			}
+			else{$('b:eq(1)>img').css("display","block")}
+		}
+		ipt[1].onkeyup=function(){
+			var iptv=ipt[1].value.toUpperCase();
+			var sign1=0,sign2=0,sign3=0;
+			for(var i=0;i<iptv.length;i++){
+				if(iptv.charCodeAt(i)<=57&&iptv.charCodeAt(i)>=48){
+					sign1=1;
+				}
+				else if(iptv.charCodeAt(i)<=90&&iptv.charCodeAt(i)>=65){
+					sign2=1;
+				}
+				else{
+					sign3=1;
+				}
+			}
+			var sign4=""+sign1+sign2+sign3
+			if((sign4=="001")||(sign4=="010")||(sign4=="100")){
+				$('.strength>b').eq(0).css('background','#f00')
+				$('.strength>b').eq(1).css('background','#D4D4D2')
+				$('.strength>b').eq(2).css('background','#D4D4D2')
+			}
+			if((sign4=="011")||(sign4=="110")||(sign4=="101")){
+				$('.strength>b').eq(0).css('background','#f00')
+				$('.strength>b').eq(1).css('background','#f00')
+				$('.strength>b').eq(2).css('background','#D4D4D2')
+			}
+			if(sign4=="111"){
+				$('.strength>b').eq(0).css('background','#f00')
+				$('.strength>b').eq(1).css('background','#f00')
+				$('.strength>b').eq(2).css('background','#f00')
+			}
+			if(sign4=="000"){
+				$('b:eq(1)>img').css("display","none");
+				$('.strength>b').eq(0).css('background','#D4D4D2')
+				$('.strength>b').eq(1).css('background','#D4D4D2')
+				$('.strength>b').eq(2).css('background','#D4D4D2')
+			}
+		}
+		var seepw=false;
+		$('.upassward>i').click(function(){
+			seepw=!seepw
+			if(seepw){
+				pw_ipt.type="text";
+				seepw_img.src="img/zhuce/pwicon-2.png"
+			}else{
+				pw_ipt.type="password";
+				seepw_img.src="img/zhuce/pwicon.png"
+			}
+		})
+		
+		var ocode=document.getElementsByClassName("code")[0];
+		var update=ocode.children[3];
+		update.onclick=function(){
+			ocode.children[2].innerText=createCheckCode(4)
+		}
+		
+		ipt[2].onkeyup=function(){
+			if(ipt[2].value.length>=4){
+				if(ipt[2].value.toUpperCase()!=ocode.children[2].innerText){
+					oerror[2].innerText="输入有误！"
+					oerror[2].style.color="#DE5797";
+				}else{
+					oerror[2].innerText="";
+					$('.code').animate({left:'-346px'});
+					$('.code2').animate({left:'0'},function(){
+						a();
+						function a(){
+							var sec=9;
+							var t=setInterval(function(){
+								$('.code2>p>i').html(sec)
+								sec--;
+								if(sec==-1){
+									clearInterval(t);
+									$('.code2>p').html("点击重新获取");
+									$('.code2>p').click(function(){
+										$('.code2>p').html("<i>10</i>秒后重新获取");
+										a()
+									})
+								}
+							},1000)
+						}
+						
+					})
+				}
+			}
+		}
+		$('button').click(function(){
+			if(ipt[0].value.length==0){
+				oerror[0].innerText="请输入手机号码！";
+			}
+			if(ipt[1].value.length==0){
+				oerror[1].innerText="请输入密码！";
+			}
+			if(ipt[2].value.length==0){
+				oerror[2].innerText="请输入验证码！";
+			}
+		})
+	</script>
+</html>

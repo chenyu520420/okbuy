@@ -1,0 +1,106 @@
+
+/*=======adress==========*/
+.adress{width:1200px;margin:0 auto;height:54px;display: block;}
+.adress p{font-size: 12px;line-height: 54px;}
+.adress p a{color:#666666}
+/*=======show======*/
+.imgshow{width:1200px;margin:0 auto;overflow: hidden;}
+.shoes_show{width:451px;padding-top:0;margin-right:30px;float: left;}
+.shoes_show .shoes_shows{cursor:move;border:1px solid #ececec;width:448px;height:450px;position: relative;}
+.shoes_show .shoes_shows .block{width:200px;height:200px;opacity: 0.5;position: absolute;background: #fff;border:1px solid #999;display:none}
+.shoes_show .shoes_shows img{width:448px;height:450px;display: block;}
+.shoes_show .shoes_min li{float:left;border-bottom:1px solid #ececec;border-left:1px solid #ececec;position: relative;}
+.shoes_show .shoes_min .li_click{border:1px solid #d70057;}
+.shoes_show .shoes_min .li_click i{width:33px;height:5px;background: url(../img/shoes/prodjiao.png) no-repeat center;position:absolute;top: 0;right: 19px;}
+.shoes_show .shoes_min img{width:49px;height:49px}
+.shoes_show .shoes_min .shoes_min_li9{border-right:1px solid #ececec}
+.shoes_show .shoes_big{position: absolute;top:234px;left:490px;width:598px;height:598px;overflow: hidden;display: none;z-index: 10;;}
+.shoes_show .shoes_big img{position: absolute;top:-300px;left:-300px;}
+.shoes_show_R{float:left;width:718px}
+.shoes_show_R .shoes_AD{height:45px;line-height: 45px;width:718px}
+.shoes_show_R .shoes_AD h3{color:#333333;font-size:12px;float:left}
+.shoes_show_R .shoes_AD span{float:right;font-size:12px;color:#999;}
+.shoes_show_R .shoes_AD span a{color:#d9009b}
+.shoes_show_R .rice{height:45px;width:718px;background:#f6f6f6;border-bottom: 1px solid #e9e9e9 ;padding-bottom: 20px;}
+.shoes_show_R .rice h3{margin:33px 10px 0 20px;font-size:12px;color: #535353;float: left;}
+.shoes_show_R .rice i{margin-top:28px;font-size:18px;color: #d70057;float: left;}
+.shoes_show_R .rice h4{margin:18px 11px 0 0;font-size:28px;color: #d70057;float: left;}
+.shoes_show_R .rice h5{margin:34px 20px 0 0;font-size:12px;color: #999;float: left;text-decoration: line-through;}
+.shoes_show_R .rice span{margin-top:26px;font-size:12px;color: #fff;float: left;width:56px;height:20px;background:#f66b8c;border-radius: 24px;text-align: center;line-height: 20px;}
+.shoes_show_R .rice div{height:30px;margin-top:17px;width:69px;padding-left:21px;border-left:1px solid #e9e9e9;float:right;font-size: 12px;color:#535353;}
+.shoes_show_R .rice div a{display: block;color:#d80079;text-decoration: underline;margin-left:20px}
+.shoes_show_R .color{height:75px;margin-top:15px}
+.shoes_show_R .color span{margin:0 32px 0 18px;font-size:12px;color:#535353;float:left;}
+.shoes_show_R .color a{margin-right:10px;display: block;width:59px;height:59px;float:left;border:1px solid #CCCCCC;position: relative;}
+.shoes_show_R .color .click_img{border:1px solid #d70057;}
+.shoes_show_R .color .click_img i{width:16px;height:16px;background: url(../img/shoes/sizeselected-thumb.png) no-repeat center;position:absolute;bottom: 0;right: 0;}
+.shoes_show_R .size{margin-top:15px;height:60px;position:relative}
+.shoes_show_R .size span{margin:0 32px 0 18px;font-size:12px;color:#535353;float:left;}
+.shoes_show_R .size p{color:#d70057;font-size:12px}
+.shoes_show_R .size ul{margin:13px 0 0 75px}
+.shoes_show_R .size li{float:left;height:24px;padding:0 16px;margin-right:10px;font-size:12px;color:#333333;line-height: 24px;border:1px solid #ccc;}
+.shoes_show_R .size .duizhao{position:absolute;width:288px;height:42px;background:#EBEBEB;top:56px;left:75px;display: none}
+.shoes_show_R .size .duizhao span{margin:0;padding:0;width:95px;height:20px;border-right:1px solid #fff;border-bottom:1px solid #fff;font-size: 12px;text-align: center;line-height: 20px;float: left;display: block;}
+.shoes_show_R .num{margin-bottom:40px;height:30px}
+.shoes_show_R .num span{line-height:20px;margin:0 32px 0 18px;font-size:12px;color:#535353;float:left;}
+.shoes_show_R .num p{width:86px;height:28px;margin-left:75px;margin-top: 4px;border:1px solid #b5b5b5}
+.shoes_show_R .num p button{float:left;width:28px;height:28px;background:#f9f9f9;border:0;outline: none;}
+.shoes_show_R .num p b{float:left;width:28px;height:28px;display: block;text-align: center;line-height: 28px;}
+.shoes_show_R .buy{height:70px;margin-left:75px}
+.shoes_show_R .buy button{border:0;outline:none;width:190px;height:50px;background:#d70057;padding-left:44px;padding-top:5px;float: left;}
+.shoes_show_R .buy button img{float: left;}
+.shoes_show_R .buy button h4{float: left;font-size: 18px;color:#ffffe4;}
+.shoes_show_R .buy span{line-height:20px;width:60px;height:20px;padding-left:22px;margin-left:20px;background:url(../img/shoes/wishstar.png) no-repeat left center;margin-top:17px;display: block;float: left;font-size:12px;color:#999;}
+.shoes_show_R .baozhang{width:630px;height:42px;border-top:1px dashed #dcdcdc;border-bottom:1px dashed #dcdcdc;padding-top:10px;padding-left:76px}
+
+.shoes_louti{height:48px;width:1200px;margin:0 auto;background:#fbfbfb;border:1px solid #dfdfdf;position:absolute;top:775px;left:32px;overflow:hidden;}
+.shoes_louti ul li{width:140px;height:48px;border-right:1px solid #dfdfdf;float: left;font-size:12px;color:#333;text-align: center;line-height: 48px;}
+.shoes_louti ul .louti_click{background: #fff;border-bottom: 2px solid #d70057;height:47px}
+
+.shoes_detail{height:318px;width:1200px;margin:0 auto;margin-top:114px;}
+.shoes_detail .detail_top{height:32px;width:1200px;margin-bottom: 27px;background:url(../img/shoes/productdetail-info-title.png)  no-repeat top center;}
+.shoes_detail table{border:1px solid #999;border-collapse: collapse;}
+.shoes_detail table td{border:1px solid #999;line-height: 40px;font-size: 12px;font-weight: 900;}
+.shoes_detail table td:nth-child(2n+1){background:#fbfbfb;width:122px;height:40px;border-right:0;text-align: right;padding-right:20px;color:#666;}
+.shoes_detail table td:nth-child(2n){width:441px;height:40px;border-left:0;text-align: left;padding-left: 15px;color:#a599b2}
+
+.shoes_size{height:309px;width:1200px;margin:0 auto;margin-bottom: 47px;}
+.shoes_size .size_top{height:32px;width:1200px;margin-bottom: 27px;background:url(../img/shoes/productdetail-info-title.png)  no-repeat top center;background-position:0 -42px}
+.shoes_size h4{color:#666666;font-size:12px;font-weight: 900;}
+.shoes_size p{margin:20px 0;color:#666;font-size: 12px;height:30px;line-height: 30px;}
+.shoes_size p img{float:left;margin-right:5px}
+.shoes_size table{border:1px solid #999;border-collapse: collapse;}
+.shoes_size table td{text-align:center;border:1px solid #999;line-height: 40px;font-size: 12px;font-weight: 900;width:56px;height:32px}
+.shoes_size table th{background: #dddddd;text-align: center;padding: 5px 0;}
+.shoes_size table td:nth-child(1){width:132px;height:32px}
+
+
+.fixed{display:none;width:50px;height:90px;position:fixed;right:6px;bottom:100px;}
+.fixed_top{background: url(../img/gototop_2.png);display: block;width:50px;height:50px;margin-bottom: 10px;}
+.fixed_bottom{background: url(../img/gototop_2.png);display: block;width:50px;height:30px;background-position: 0 -60px;}
+.fixed2{display:block;width:50px;height:90px;position:absolute;right:6px;bottom:288px;}
+
+	/*===============link===============*/
+	.link{width:100%;height:233px;border:1px solid #c3c3c3;background:#e6e6e6;padding-top:28px;padding-left:16px}
+	.link_con{width:1200px;margin:0 auto ;}
+	.link .link_top{overflow:hhidden;height:110px}
+	.link .link_left{height:89px;width:652px;float:left;background:#fff;border:1px solid #e8e8e8;padding:14px 0 0 16px}
+	.link .link_left dl{float:left;margin-right:35px}
+	.link .link_left dl dt{margin-right:12px;float:left} 
+	.link .link_left dl dd{float:left;width:156px;font-size:12px}
+	.link .link_left dl dd h3{font-size:14px;color:#333;margin-bottom:1px}
+	.link .link_left dl dd p{font-size:12px;color:#999;line-height:18px}
+	.link .link_left dl .link_dd{width:120px}
+	.link .link_left div img{margin:8px 0}
+	.link .link_other{padding-left:1px;width:121px;background:#fff;float:left;margin-left:15px}
+	.link .link_other h3{height:24px;padding-left:20px;font-size:12px;color:#999;line-height: 24px;}
+	.link .link_other ul{padding:14px 0 0 20px;background: #e6e6e6;}
+	.link .link_other ul  li a{line-height: 24px;font-size: 12px;color:#666}	
+	.link .link_mid{padding:43px 0 14px;text-align: center;width:447px;margin:0 auto;height:35px}
+	.link .link_mid img{margin-right:24px;float:left}
+	.link .link_bottom{width:588px;margin:0 auto}
+	.link .link_bottom a{font-size: 12px;color:#777;padding:0 7px;border-right:1px solid #d9d7d9}
+	.link .link_bottom .link_bottom_a{border:0;padding-right:0}
+	/*=============bottom============*/
+	.bottom{width:100%;height:24px;background: #232323;font-size:12px;color:#999;text-align: center;line-height: 24px;}
+	.bottom a{color:#999;}

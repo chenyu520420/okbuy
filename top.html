@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/okbuy.css"/>
+		<script src="js/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+			<div class="minnav">
+			<div class="minnav_con">
+				<ul class="minnav_ul">
+					<li><a href="login.html" target="_blank">登录</a><i>|</i></li>
+					<li><a href="register.html" target="_blank">注册</a></li>
+					<li class="more"><a class="more_a" href="" target="_blank">我的好乐买</a><i>|</i>
+						<ul class="myokbuy">
+							<li><a class="myokbuy_a" href="">我的好乐买</a></li>
+							<li><a href="">我的订单</a></li>
+							<li><a href="">我的收藏</a></li>
+							<li><a href="">我的优惠券</a></li>
+						</ul>
+					</li>
+					<li class="more"><a class="more_a" href="" target="_blank">关注好乐买</a><i>|</i>
+						<div class="clickokbuy">
+							<a class="myokbuy_a" href="" target="_blank">关注好乐买</a>
+							<img src="img/appqcode_2.png" alt="" />
+							<span style="color:#666666;font-size:12px;padding-left:29px">下载客户端</span>
+						</div>
+					</li>
+					<li class="more"><a class="more_a" href="" target="_blank">客户服务</a><i>|</i>
+						<ul class="service">
+							<li><a class="myokbuy_a" href="">客服服务</a></li>
+							<li><a href="">联系客服</a></li>
+							<li><a href="">帮助中心</a></li>
+							<li><a href="">意见建议</a></li>
+						</ul>
+					</li>
+					<li class="more"><a class="more_a" href="" target="_blank">公告</a>
+						<span class="notice">
+							<p>
+								<a href="">轻奢品牌ECCO多款上线，3折起售！！</a>
+							</p>
+							<p>
+								<a href="">玖熙 欧美风格女鞋多款上线！</a>
+							</p>
+							<p>
+								<a href="">富贵鸟春款直降，剁手也要买啊！</a>
+							</p>
+						</span>
+					</li>
+				</ul>
+			</div>
+			<script type="text/javascript">
+					$('.more:eq(0)').on('mouseover',function(){
+					$('.myokbuy').css('display',"block")
+				})
+				$('.myokbuy:eq(0)').on('mouseout',function(){
+					$('.myokbuy').css('display',"none")
+					$('.myokbuy:eq(0)>li>a').css('color',"#5a5a5a");
+				})
+				$('.myokbuy:eq(0)>li>a').on('mouseover',function(){
+					$('.myokbuy:eq(0)>li>a').css('color',"#5a5a5a");
+					$(this).css('color',"#D70057")
+				})
+				$('.more:eq(1)').on('mouseover',function(){
+					$('.clickokbuy').css('display',"block")
+				})
+				$('.clickokbuy').on('mouseout',function(){
+					$('.clickokbuy').css('display',"none")
+				})
+				$('.more:eq(2)').on('mouseover',function(){
+					$('.service').css('display',"block")
+				})
+				$('.service').on('mouseout',function(){
+					$('.service').css('display',"none")
+					$('.service>li>a').css('color',"#5a5a5a");
+				})
+				$('.service>li>a').on('mouseover',function(){
+					$('.service>li>a').css('color',"#5a5a5a");
+					$(this).css('color',"#D70057")
+				})
+				$('.more:eq(3)').on('mouseover',function(){
+					$('.notice').css('display',"block");
+					$('.more:eq(3)')[0].className="more Notice";
+					$('.more:eq(2)>i').html('')	
+				})
+				$('.notice>p>a').on('mouseover',function(){
+					$('.notice>p>a').css('color',"#5a5a5a");
+					$(this).css('color',"#D70057")
+				})
+				$('.notice').on('mouseout',function(){
+					$('.notice').css('display',"none");
+					$('.notice>p>a').css('color',"#5a5a5a");
+					$('.more:eq(2)>i').html('|')	
+				})
+				$('.more:eq(3)').on('mouseout',function(){
+					$('.notice').css('display',"none");
+					$('.notice>p>a').css('color',"#5a5a5a");
+					$('.more:eq(3)')[0].className="more";
+					$('.more:eq(2)>i').html('|')	
+				})
+			
+			</script>
+		</div>
+		
+		
+		
+				<div class="logo">
+		<div class="logo_con">
+			<a href="">
+				<img src="img/logo.png" alt="" />
+			</a>
+			<div id="search">
+				<input name="" id="search_ipt" value="运动冬品1折起售 开启暖冬模式"/>
+				<button></button>
+				<ul>
+					<li>阿迪达斯</li>
+					<li>新款男鞋</li>
+					<li>雪地靴</li>
+					<li>衬衫</li>
+					<li>Adidas</li>
+					<li>Lee</li>
+					<li>美国童鞋满减 </li>
+				</ul>
+			</div>
+			<a href="" id="shoopcar"></a>
+			<a href="shoppingcar.html">
+				<button id="shoopcar2">
+				去购物车结算<b>(0)</b>
+				</button>
+			</a>
+		</div>
+		<script type="text/javascript">
+			//=====================输入框	
+			var ipt=$('#search_ipt')[0]
+			$('#search_ipt').on('focus',function(){
+				if(ipt.value=="运动冬品1折起售 开启暖冬模式"){
+					ipt.value="";
+				}
+			})
+			$('#search_ipt').on('blur',function(){
+				if(ipt.value==""){
+					ipt.value="运动冬品1折起售 开启暖冬模式";
+				}
+			})
+			var str=getCookie("username");
+			var str2="["+str+"]";
+			var arr=eval("("+str2+")");
+			$("#shoopcar2>b").html("("+arr.length+")")
+		</script>
+	</div>
+	
+	
+		
+	<div class="nav">
+		<div class="nav_con">
+			<ul>
+				<li style="background:#d70057"><a href="">首页</a></li>
+				<li class="nav_li2"><a href=""></a></li>
+				<li><a href="">运动生活</a></li>
+				<li><a href="">户外鞋服</a></li>
+				<li><a href="">男女名鞋</a></li>
+				<li><a href="">快乐儿童</a></li>
+				<li class="nav_li6"><a href="">全球购</a></li>
+				<li><a href="">家居包配</a></li>
+			</ul>
+			<!-----sport-------->
+			<div class="sport nav_com">
+				<span></span>
+				<div class="sport_left nav_com_con">
+					<h3>品类导购</h3>
+					<h4>运动鞋</h4>
+					<p>
+						<a href="" target="_blank">跑步鞋</a>
+						<a href="" target="_blank">板鞋</a>                    
+                        <a href="" target="_blank">休闲复古鞋</a>
+						<a href="" target="_blank">篮球鞋</a>
+						<a href="" target="_blank">帆布鞋</a>
+						<a href="" target="_blank">休闲鞋</a>
+						<a href="" target="_blank">硫化鞋</a>
+						<a href="" target="_blank">户外鞋</a>
+						<a href="" target="_blank">靴子</a>
+                        <a href="" target="_blank">健步鞋</a>
+						<a href="" target="_blank">室内鞋</a>
+						<a href="" target="_blank">综训鞋</a>
+						<a href="" target="_blank">羽毛球鞋</a>
+						<a href="" target="_blank">足球鞋</a>
+						<a href="" target="_blank">网球鞋</a>
+						<a href="" target="_blank">乒乓球鞋</a>
+						<a href="" target="_blank">健身鞋</a>
+						<a href="" target="_blank">滑板鞋</a>
+                        <a href="" target="_blank">凉鞋/凉拖</a>
+					</p>
+					<h4>运动服</h4>
+					<p>
+						<a class="cateitem" href="http://www.okbuy.com/clothes/401" target="_blank">外套/开衫</a>
+						<a class="cateitem" href="http://www.okbuy.com/clothes/400" target="_blank">卫衣/套头衫</a>
+						<a class="cateitem" href="http://www.okbuy.com/clothes/313" target="_blank">运动长裤</a>
+						<a class="cateitem" href="http://www.okbuy.com/clothes/399" target="_blank">马甲</a>
+						<a class="cateitem" href="http://www.okbuy.com/clothes/71" target="_blank">棉服</a>
+						<a class="cateitem" href="http://www.okbuy.com/clothes/398" target="_blank">羽绒服</a>
+						<a class="cateitem" href="http://www.okbuy.com/clothes/74" target="_blank">风衣</a>
+						<a class="cateitem" href="http://www.okbuy.com/shoe/400" target="_blank">衬衫</a>
+						<a class="cateitem" href="http://www.okbuy.com/clothes/396" target="_blank">POLO衫</a>
+						<a class="cateitem" href="http://www.okbuy.com/clothes/397" target="_blank">T恤</a>
+						<a class="cateitem" href="http://www.okbuy.com/clothes/312" target="_blank">短裤</a>
+						<a class="cateitem" href="http://www.okbuy.com/clothes/384" target="_blank">胸衣</a>
+						<a class="cateitem" href="http://www.okbuy.com/clothes/72" target="_blank">运动背心</a>
+						<a class="cateitem" href="http://www.okbuy.com/clothes/388" target="_blank">运动裙</a>
+						<a class="cateitem" href="http://www.okbuy.com/clothes/402" target="_blank">运动套装</a>
+					</p>
+					<h4>运动周边</h4>
+					<p>
+						<a href="http://www.okbuy.com/search?top_key=%E8%A2%9C%E5%AD%90&ref=input" target="_blank">袜子</a>
+                        <a href="http://www.okbuy.com/search?top_key=%E5%B8%BD%E5%AD%90&category_second_id=305" target="_blank">帽子</a>                                               
+                        <a href="http://www.okbuy.com/search?top_key=%E5%9B%B4%E5%B7%BE&category_second_id=305" target="_blank">围巾</a>
+                        <a href="http://www.okbuy.com/accessory/95" target="_blank">护具</a>
+						<a href="http://www.okbuy.com/accessory/340" target="_blank">球类</a>
+						<a href="http://www.okbuy.com/accessory/393" target="_blank">泳具</a>
+                        <a href="http://www.okbuy.com/search?top_key=%E7%90%83%E6%8B%8D" target="_blank">球拍</a>
+						<a href="http://www.okbuy.com/search?top_key=%E8%BF%90%E5%8A%A8%E5%8C%85&ref=input" target="_blank">运动休闲包</a>
+					</p>
+				</div>
+				<div class="sport_mid  nav_com_con">
+					<h3>运动导购</h3>
+					<h4>跑步运动</h4>
+					<p>
+						<a href="http://www.okbuy.com/shoe/49/else-ordv3" target="_blank">跑步鞋品</a>
+						<a href="http://www.okbuy.com/search?top_key=boost&sort=sale_date_desc&brand_id=2&category_third_id=49" target="_blank">BOOST</a>
+						<a href="http://www.okbuy.com/search?top_key=ZOOM&sort=sale_date_desc&category_third_id=49" target="_blank">ZOOM</a>
+						<a href="http://www.okbuy.com/search?top_key=free&sort=sale_date_desc&category_third_id=49" target="_blank">Free</a>
+						<a href="http://www.okbuy.com/search?top_key=lunar&sort=sale_date_desc&category_third_id=49" target="_blank">Lunar</a>
+						<a href="http://www.okbuy.com/search?top_key=%E5%BC%A7&sort=sale_date_desc&category_third_id=49" target="_blank">李宁弧</a>
+						<a href="http://www.okbuy.com/search?top_key=%E4%BA%91&sort=sale_date_desc&category_third_id=49" target="_blank">李宁云</a>
+						<a href="http://www.okbuy.com/clothes/70" target="_blank">跑步上衣</a>
+						<a href="http://www.okbuy.com/search?top_key=%E7%9F%AD%E8%A2%96+%E9%80%8F%E6%B0%94&sort=sale_date_desc&category_second_id=70" target="_blank">T恤/POLO</a>
+						<a href="http://www.okbuy.com/clothes/401" target="_blank">茄克/外套</a>
+						<a href="http://www.okbuy.com/search?top_key=%E7%B4%A7%E8%BA%AB&category_third_id=397" target="_blank">胸衣</a>
+						<a href="http://www.okbuy.com/clothes/312-0-0-2-0-0" target="_blank">紧身衣</a>
+						<a href="http://www.okbuy.com/search?top_key=%E9%80%9F%E5%B9%B2&sort=sale_date_desc&category_third_id=397" target="_blank">速干衣</a>
+						<a href="http://www.okbuy.com/search?top_key=%E9%A9%AC%E7%94%B2&category_second_id=70" target="_blank">保暖马甲</a>
+						<a href="http://www.okbuy.com/clothes/313" target="_blank">跑步裤装</a>
+						<a href="http://www.okbuy.com/search?top_key=%E6%94%B6%E8%85%BF&category_third_id=313" target="_blank">长裤</a>
+						<a href="http://www.okbuy.com/search?top_key=%E8%BF%90%E5%8A%A8&category_third_id=312" target="_blank">短裤</a>
+						<a href="http://www.okbuy.com/search?top_key=%E7%B4%A7%E8%BA%AB+%E8%A3%A4&category_second_id=70" target="_blank">紧身/打底裤</a>
+						<a href="http://www.okbuy.com/accessory/305" target="_blank">跑步周边</a>
+						<a href="http://www.okbuy.com/search?top_key=%E8%A2%9C%E5%AD%90&brand_id=2%2C5%2C1%2C1009%2C40&category_second_id=305" target="_blank">运动袜</a>
+						<a href="http://www.okbuy.com/search?top_key=%E5%8F%8C%E8%82%A9&brand_id=1%2C2%2C4%2C41%2C963&category_second_id=98" target="_blank">双肩包</a>
+						<a href="http://www.okbuy.com/search?top_key=%E8%85%B0%E5%8C%85&brand_id=1079%2C1%2C4%2C41%2C469" target="_blank">腰包</a>
+						<a href="http://www.okbuy.com/search?top_key=%E6%8A%A4%E5%85%B7&brand_id=1%2C4%2C1079%2C2" target="_blank">护具</a>
+						<a href="http://www.okbuy.com/search?top_key=%E6%B0%B4%E5%A3%B6&brand_id=1" target="_blank">水壶</a>
+					</p>
+					<h4>球类运动</h4>
+					<p>
+						<a href="http://www.okbuy.com/search?top_key=%E7%AF%AE%E7%90%83&ref=input" target="_blank">篮球系列</a>
+						<a href="http://www.okbuy.com/shoe/52" target="_blank">球鞋</a>
+						<a href="http://www.okbuy.com/search?top_key=%E9%AB%98%E5%B8%AE&sort=sale_date_desc&category_third_id=52" target="_blank">高帮款</a>
+						<a href="http://www.okbuy.com/search?top_key=%E7%AF%AE%E7%90%83%E8%83%8C%E5%BF%83&category_second_id=70" target="_blank">背心</a>
+						<a href="http://www.okbuy.com/search?top_key=%E7%AF%AE%E7%90%83&category_third_id=312" target="_blank">短裤</a>
+						<a href="http://www.okbuy.com/search?top_key=%E7%AF%AE%E7%90%83&category_third_id=402" target="_blank">套装</a>
+						<a href="http://www.okbuy.com/search?top_key=%E6%8A%A4%E5%85%B7&brand_id=1%2C4%2C1079%2C2" target="_blank">护具</a>
+						<a href="http://www.okbuy.com/search?top_key=%E8%B6%B3%E7%90%83&ref=input" target="_blank">足球系列</a>
+						<a href="http://www.okbuy.com/search?top_key=%E8%B6%B3%E7%90%83&category_first_id=47" target="_blank">球鞋</a>
+						<a href=""  target="_blank">服装</a>
+						<a href="http://www.okbuy.com/search?top_key=%E8%B6%B3%E7%90%83&category_second_id=89" target="_blank">配件</a>
+						<a href="http://www.okbuy.com/search?top_key=%E6%8A%A4%E5%85%B7&brand_id=1%2C4%2C1079%2C2" target="_blank">护具</a>
+						<a href="http://www.okbuy.com/search?top_key=%E7%BE%BD%E6%AF%9B%E7%90%83&ref=input" target="_blank">羽毛球系列</a>
+						<a href="http://www.okbuy.com/search?top_key=%E7%BE%BD%E6%AF%9B%E7%90%83&sort=sale_date_desc&category_first_id=47" target="_blank">球鞋</a>
+						<a href="http://www.okbuy.com/search?top_key=%E7%BE%BD%E6%AF%9B%E7%90%83&sort=sale_date_desc&category_second_id=70" target="_blank">服装</a>
+						<a href="http://www.okbuy.com/search?top_key=%E7%BE%BD%E6%AF%9B%E7%90%83&category_first_id=68" target="_blank">球包</a>
+						<a href="http://www.okbuy.com/search?top_key=%E6%8B%8D&sort=sale_date_desc&category_second_id=89" target="_blank">球拍</a>
+					</p>
+					<h4>健身/瑜伽/游泳</h4>
+					<p>
+						<a href="http://www.okbuy.com/clothes/384" target="_blank">胸衣</a>
+						<a href="http://www.okbuy.com/search?top_key=紧身&category_third_id=313" target="_blank">紧身裤（长）</a>
+						<a href="http://www.okbuy.com/search?top_key=%E7%B4%A7%E8%BA%AB&category_third_id=312" target="_blank">紧身裤（中/短）</a>
+						<a href="http://www.okbuy.com/shoe/50" target="_blank">综训鞋</a>
+						<a href="http://www.okbuy.com/search?top_key=%E7%91%9C%E4%BC%BD&category_second_id=70" target="_blank">瑜伽服</a>
+						<a href="http://www.okbuy.com/search?top_key=%E6%B8%B8%E6%B3%B3&category_second_id=328" target="_blank">泳装</a>
+						<a href="http://www.okbuy.com/accessory/393" target="_blank">泳具</a>
+					</p>
+				</div>
+				<div class="sport_right  nav_com_con">
+					<h3>品牌导购</h3>
+					<img src="img/3ee625e7a98b87aba0b40c974bb3ba7f.jpg" alt="" usemap="#sportmap" border='0'  />
+					<map name="sportmap" id="sportmap" >
+							<area shape="rect" coords="89,97,151,136" href="http://www.baidu.com" target="_blank" />								
+							<area shape="rect" coords="7,97,65,131" href="http://www.baidu.com" target="_blank" />	
+							<area shape="rect" coords="164,97,230,133" href="http://www.okbuy.com/brand/anta" target="_blank" />	
+							<area shape="rect" coords="6,49,64,89" href="http://www.okbuy.com/brand/new%20balance" target="_blank" />	
+							<area shape="rect" coords="86,51,150,89" href="http://www.okbuy.com/brand/converse" target="_blank" />	
+							<area shape="rect" coords="160,48,231,86" href="http://www.okbuy.com/brand/adidas%20originals" target="_blank" />	
+							<area shape="rect" coords="162,5,229,43" href="http://www.okbuy.com/brand/lining" target="_blank" />	
+							<area shape="rect" coords="87,3,141,38" href="http://www.okbuy.com/brand/adidas" target="_blank" />	
+							<area shape="rect" coords="6,4,61,40" href="http://www.okbuy.com/brand/nike" target="_blank" />	
+							<area shape="rect" coords="10,142,65,174" href="http://www.okbuy.com/brand/vans" target="_blank" />	
+							<area shape="rect" coords="93,145,152,184" href="http://www.okbuy.com/brand/kappa?category=67" target="_blank" />	
+							<area shape="rect" coords="166,144,229,180" href="http://www.okbuy.com/brand/reebok" target="_blank" />	
+							<area shape="rect" coords="7,187,68,221" href="http://www.okbuy.com/brand/asics" target="_blank" />	
+							<area shape="rect" coords="90,192,154,224" href="http://www.okbuy.com/brand/361%C2%B0" target="_blank" />	
+							<area shape="rect" coords="166,191,230,226" href="http://www.okbuy.com/brand/qiaodan" target="_blank" />	
+							<area shape="rect" coords="7,229,67,266" href="http://www.okbuy.com/brand/hongxingerke" target="_blank" />	
+							<area shape="rect" coords="89,234,158,265" href="http://www.okbuy.com/brand/peak" target="_blank" />	
+							<area shape="rect" coords="168,233,227,271" href="http://www.okbuy.com/brand/k-bird" target="_blank" />	
+							<area shape="rect" coords="6,277,66,307" href="http://www.okbuy.com/brand/paul+frank" target="_blank" />	
+							<area shape="rect" coords="91,270,159,310" href="http://www.okbuy.com/brand/xtep" target="_blank" />	
+							<area shape="rect" coords="167,282,232,311" href="http://www.okbuy.com/brand/vansydical" target="_blank" />	
+							<area shape="rect" coords="2,317,64,345" href="http://www.okbuy.com/brand/mizuno" target="_blank" />	
+							<area shape="rect" coords="92,313,152,349" href="http://www.okbuy.com/brand/joma" target="_blank" />	
+							<area shape="rect" coords="169,317,238,347" href="http://www.okbuy.com/brand/hotsuit" target="_blank" />	
+					</map>
+				</div>
+				<script type="text/javascript">
+					//==================================二级菜单
+					$('.nav_con>ul>li:eq(2)').on('mouseover',function(){
+						$('.sport').css('display','block')
+						$('.sport').on('mouseover',function(){
+							$('.sport').css('display','block')
+						})
+					})
+					$('.nav_con>ul>li:eq(2)').on('mouseout',function(){
+						$('.sport').css('display','none')
+						$('.sport').on('mouseout',function(){
+							$('.sport').css('display','none')
+						})
+					})
+					$('.nav_con>ul>li:eq(3)').on('mouseover',function(){
+						$('.outside').css('display','block')
+						$('.outside').on('mouseover',function(){
+							$('.outside').css('display','block')
+						})
+					})
+					$('.nav_con>ul>li:eq(3)').on('mouseout',function(){
+						$('.outside').css('display','none')
+						$('.outside').on('mouseout',function(){
+							$('.outside').css('display','none')
+						})
+					})
+					$('.nav_con>ul>li:eq(4)').on('mouseover',function(){
+						$('.manshoes').css('display','block')
+						$('.manshoes').on('mouseover',function(){
+							$('.manshoes').css('display','block')
+						})
+					})
+					$('.nav_con>ul>li:eq(4)').on('mouseout',function(){
+						$('.manshoes').css('display','none')
+						$('.manshoes').on('mouseout',function(){
+							$('.manshoes').css('display','none')
+						})
+					})
+					$('.nav_con>ul>li:eq(5)').on('mouseover',function(){
+						$('.child').css('display','block')
+						$('.child').on('mouseover',function(){
+							$('.child').css('display','block')
+						})
+					})
+					$('.nav_con>ul>li:eq(5)').on('mouseout',function(){
+						$('.child').css('display','none')
+						$('.child').on('mouseout',function(){
+							$('.child').css('display','none')
+						})
+					})
+						$('.nav_con>ul>li:eq(6)').on('mouseover',function(){
+						$('.global').css('display','block')
+						$('.global').on('mouseover',function(){
+							$('.global').css('display','block')
+						})
+					})
+					$('.nav_con>ul>li:eq(6)').on('mouseout',function(){
+						$('.global').css('display','none')
+						$('.global').on('mouseout',function(){
+							$('.global').css('display','none')
+						})
+					})			
+				</script>
+			
+			</div>
+			<!--OUTSIDE-->
+			<div class="outside nav_com">
+				<span></span>
+				<div class="outside_left nav_com_con">
+					<h3>户外服饰</h3>
+					<h4>男装</h4>
+							<p>
+								<a href="http://www.okbuy.com/clothes/269-1v1" target="_blank">T恤</a>
+								<a href="http://www.okbuy.com/clothes/268-1v1" target="_blank">Polo衫</a>
+								<a href="http://www.okbuy.com/clothes/275-1v1" target="_blank">衬衫</a>
+								<a href="http://www.okbuy.com/clothes/271-1v1" target="_blank">卫衣</a>
+								<a href="http://www.okbuy.com/clothes/263-1v1" target="_blank">速干衣</a>
+								<a href="http://www.okbuy.com/search?top_key=%E7%9A%AE%E8%82%A4%E8%A1%A3&filter_value_key_property_key_1=1" target="_blank">皮肤衣</a>
+								<a href="http://www.okbuy.com/clothes/272-1v1" target="_blank">夹克外套</a>
+								<a href="http://www.okbuy.com/clothes/259-1v1" target="_blank">冲锋衣</a>
+								<a href="http://www.okbuy.com/clothes/261-1v1" target="_blank">抓绒衣</a>
+								<a href="http://www.okbuy.com/clothes/338-1v1" target="_blank">短裤</a>
+								<a href="http://www.okbuy.com/clothes/264-1v1" target="_blank">速干裤</a>
+								<a href="http://www.okbuy.com/clothes/273-1v1" target="_blank">休闲裤</a>
+								<a href="http://www.okbuy.com/clothes/260-1v1" target="_blank">冲锋裤</a>
+								<a href="http://www.okbuy.com/clothes/466-1v1" target="_blank">三合一冲锋衣</a>
+								<a href="http://www.okbuy.com/clothes/266-1v1" target="_blank">羽绒服/棉服</a>
+
+							</p>
+							<h4>女装</h4>
+							<p>
+								<a href="http://www.okbuy.com/clothes/269-1v2" target="_blank">T恤</a>
+								<a href="http://www.okbuy.com/clothes/268-1v2" target="_blank">Polo衫</a>
+								<a href="http://www.okbuy.com/clothes/275-1v2" target="_blank">衬衫</a>
+								<a href="http://www.okbuy.com/clothes/271-1v2" target="_blank">卫衣</a>
+								<a href="http://www.okbuy.com/clothes/263-1v2" target="_blank">速干衣</a>
+								<a href="http://www.okbuy.com/search?top_key=%E7%9A%AE%E8%82%A4%E8%A1%A3&filter_value_key_property_key_1=2" target="_blank">皮肤衣</a>
+								<a href="http://www.okbuy.com/clothes/272-1v2" target="_blank">夹克外套</a>
+								<a href="http://www.okbuy.com/clothes/259-1v2" target="_blank">冲锋衣</a>
+								<a href="http://www.okbuy.com/clothes/261-1v2" target="_blank">抓绒衣</a>
+								<a href="http://www.okbuy.com/clothes/338-1v2" target="_blank">短裤</a>
+								<a href="http://www.okbuy.com/clothes/264-1v2" target="_blank">速干裤</a>
+								<a href="http://www.okbuy.com/clothes/273-1v2" target="_blank">休闲裤</a>
+								<a href="http://www.okbuy.com/clothes/260-1v2" target="_blank">冲锋裤</a>
+                                <a href="http://www.okbuy.com/clothes/466-1v2" target="_blank">三合一冲锋衣</a>
+								<a href="http://www.okbuy.com/clothes/266-1v2" target="_blank">羽绒服/棉服</a>
+							</p>
+				</div>
+				<div class="outside_mid  nav_com_con">
+					<h3>户外鞋类</h3>
+					<h4>男鞋</h4>
+					<p>
+						<a href="http://www.okbuy.com/shoe/323-1v1" target="_blank">休闲鞋</a>
+						<a href="http://www.okbuy.com/shoe/227-1v1" target="_blank">徒步鞋</a>
+						<a href="http://www.okbuy.com/shoe/238-1v1" target="_blank">工装鞋</a>
+						<a href="http://www.okbuy.com/shoe/232-1v1" target="_blank">凉鞋</a>
+						<a href="http://www.okbuy.com/shoe/321-1v1" target="_blank">两栖鞋</a>
+						<a href="http://www.okbuy.com/shoe/231-1v1" target="_blank">溯溪鞋</a>
+						<a href="http://www.okbuy.com/shoe/228-1v1" target="_blank">登山鞋</a>
+						<a href="http://www.okbuy.com/shoe/229-1v1" target="_blank">越野跑鞋</a>
+						<a href="http://www.okbuy.com/shoe/236-1v1" target="_blank">冬靴</a>
+						<a href="http://www.okbuy.com/shoe/235-1v1" target="_blank">御寒鞋</a>
+					</p>
+					<h4>女鞋</h4>
+					<p>
+						<a href="http://www.okbuy.com/shoe/323-1v2" target="_blank">休闲鞋</a>
+						<a href="http://www.okbuy.com/shoe/227-1v2" target="_blank">徒步鞋</a>
+						<a href="http://www.okbuy.com/shoe/238-1v2" target="_blank">工装鞋</a>
+						<a href="http://www.okbuy.com/shoe/232-1v2" target="_blank">凉鞋</a>
+						<a href="http://www.okbuy.com/shoe/321-1v2" target="_blank">两栖鞋</a>
+						<a href="http://www.okbuy.com/shoe/231-1v2" target="_blank">溯溪鞋</a>
+						<a href="http://www.okbuy.com/shoe/228-1v2" target="_blank">登山鞋</a>
+						<a href="http://www.okbuy.com/shoe/229-1v2" target="_blank">越野跑鞋</a>
+						<a href="http://www.okbuy.com/shoe/236-1v2" target="_blank">冬靴</a>
+						<a href="http://www.okbuy.com/shoe/235-1v2" target="_blank">御寒鞋</a>
+					</p>
+					<h3 class="outside_h3">户外配件</h3>
+					<p>
+						<a href="http://www.okbuy.com/bag/99" target="_blank">户外包</a>
+						<a href="http://www.okbuy.com/accessory/256" target="_blank">水壶</a>
+						<a href="http://www.okbuy.com/accessory/322" target="_blank">帽子</a>
+						<a href="http://www.okbuy.com/accessory/403" target="_blank">手套</a>
+						<a href="http://www.okbuy.com/topic/show/9876" target="_blank">帐篷</a>
+						<a href="http://www.okbuy.com/accessory/247" target="_blank">睡袋</a>
+						<a href="http://www.okbuy.com/accessory/248" target="_blank">垫子</a>
+					</p>
+				</div>
+				<div class="outside_right  nav_com_con">
+					<h3>品牌导购</h3>
+					<img src="img/1c50db17209fc7cb3be4aa22f1f54e21.jpg" alt="" usemap="#outsidemap" border='0'  />
+					<map name="outsidemap" id="outsidemap" >
+							<area shape="rect" coords="13,9,69,49" href="http://www.okbuy.com/brand/the+north+face?category=67" target="_blank" />
+							<area shape="rect" coords="75,10,155,48" href="http://www.okbuy.com/brand/columbia" target="_blank" />
+							<area shape="rect" coords="161,10,237,51" href="http://www.okbuy.com/brand/jack%20wolfskin?category=67" target="_blank" />
+							<area shape="rect" coords="12,51,75,94" href="http://www.okbuy.com/brand/toread" target="_blank" />
+							<area shape="rect" coords="78,54,155,93" href="http://www.okbuy.com/brand/timberland" target="_blank" />
+							<area shape="rect" coords="165,52,236,89" href="http://www.okbuy.com/brand/rax" target="_blank" />
+							<area shape="rect" coords="10,97,75,136" href="http://www.okbuy.com/brand/discoveryexpedition?category=67" target="_blank" />
+							<area shape="rect" coords="79,96,152,137" href="http://www.okbuy.com/brand/skywards" target="_blank" />
+							<area shape="rect" coords="162,97,239,137" href="http://www.okbuy.com/brand/pelliot" target="_blank" />
+							<area shape="rect" coords="12,138,74,173" href="http://www.okbuy.com/brand/coleman" />
+							<area shape="rect" coords="80,140,159,175" href="http://www.okbuy.com/brand/mobigarden" target="_blank" />
+							<area shape="rect" coords="165,140,235,177" href="http://www.okbuy.com/search?brand=63&top_key=%E5%9F%8E%E5%B8%82%E9%AA%86%E9%A9%BC" target="_blank" />
+							<area shape="rect" coords="11,178,71,214" href="http://www.okbuy.com/brand/kroceus" target="_blank" />
+							<area shape="rect" coords="79,179,159,216" href="http://www.okbuy.com/brand/northland?category=67" target="_blank" />
+							<area shape="rect" coords="170,181,234,216" href="http://www.okbuy.com/brand/merrto" target="_blank" />
+							<area shape="rect" coords="13,226,73,256" href="http://www.okbuy.com/brand/cosantle" target="_blank">
+							<area shape="rect" coords="85,224,155,259" href="http://www.okbuy.com/brand/humtto" target="_blank" />
+					</map>
+				</div>
+			</div>
+			<!----manshoes---->
+			<div class="manshoes nav_com">
+				<span></span>
+				<div class="manshoes_left nav_com_con">
+					<h3>男鞋</h3>
+					<h4>冬季款</h4>
+					<p>
+						<a href="http://www.okbuy.com/shoe/168-11v367" target="_blank">休闲靴</a>
+								<a href="http://www.okbuy.com/shoe/168-11v300" target="_blank">工装靴</a>
+								<a href="http://www.okbuy.com/shoe/168-11v299" target="_blank">马丁靴</a>
+								<a href="http://www.okbuy.com/shoe/168-11v303" target="_blank">雪地靴</a>
+								<a href="http://www.okbuy.com/shoe/168-11v1323" target="_blank">军警靴</a>
+								<a href="http://www.okbuy.com/shoe/168-11v307" target="_blank">时装靴</a>
+								<a href="http://www.okbuy.com/shoe/351" target="_blank">棉鞋</a>
+								<a href="http://www.okbuy.com/search?top_key=%E9%AB%98%E5%B8%AE%E6%9D%BF%E9%9E%8B&category_second_id=164" target="_blank">高帮板鞋</a>
+					</p>
+					<h4>春秋款</h4>
+					<p>
+						<a href="http://www.okbuy.com/shoe/167" target="_blank">休闲鞋</a>
+						<a href="http://www.okbuy.com/shoe/165" target="_blank">正装鞋</a>
+						<a href="http://www.okbuy.com/shoe/166" target="_blank">商务鞋</a>
+						<a href="http://www.okbuy.com/shoe/389" target="_blank">工装鞋</a>
+						<a href="http://www.okbuy.com/shoe/172" target="_blank">帆布鞋</a>
+						<a href="http://www.okbuy.com/shoe/171" target="_blank">板鞋</a>
+						<a href="http://www.okbuy.com/shoe/173" target="_blank">户外鞋</a>
+						<a href="http://www.okbuy.com/search?top_key=%E5%B8%83%E6%B4%9B%E5%85%8B&category_second_id=164" target="_blank">布洛克鞋</a>
+						<a href="http://www.okbuy.com/shoe/167-11v1585" target="_blank">伐木鞋</a>
+						<a href="http://www.okbuy.com/shoe/390" target="_blank">豆豆乐福鞋</a>
+					</p>
+					<h4>夏季款</h4>
+					<p>
+						<a href="http://www.okbuy.com/search?top_key=%E6%B4%9E%E6%B4%9E%E9%9E%8B&filter_value_key_property_key_1=1" target="_blank">洞洞鞋</a>
+								<a href="http://www.okbuy.com/search?top_key=%E5%86%B2%E5%AD%94&category_second_id=164&filter_value_key_property_key_1=1" target="_blank">冲孔鞋</a>
+								<a href="http://www.okbuy.com/shoe/170-3v11" target="_blank">皮凉鞋</a>
+								<a href="http://www.okbuy.com/search?top_key=%E8%BD%AF%E6%9C%A8&ref=input" target="_blank">软木底</a>
+								<a href="http://www.okbuy.com/search?top_key=%E6%B2%99%E6%BB%A9%E9%9E%8B&category_third_id=170" target="_blank">沙滩鞋</a>
+								<a href="http://www.okbuy.com/shoe/170-11v325" target="_blank">人字拖</a>
+								<a href="http://www.okbuy.com/search?top_key=%E6%8B%96%E9%9E%8B&category_third_id=170&filter_value_key_property_key_1=1" target="_blank">拖鞋</a>
+					</p>
+				</div>
+				<div class="manshoes_mid  nav_com_con">
+					<h3>女鞋</h3>
+					<h4>冬季款</h4>
+					<p>
+						<a href="http://www.okbuy.com/shoe/156-0-0-0-0-244-0-0/else-ordv3" target="_blank">短靴</a>
+								<a href="http://www.okbuy.com/shoe/156-0-0-0-0-245-0-0/else-ordv3" target="_blank">中筒靴</a>
+								<a href="http://www.okbuy.com/shoe/156-0-0-0-0-246-0-0/else-ordv3" target="_blank">高筒靴</a>
+								<a href="http://www.okbuy.com/tag/ASH%E5%90%8C%E6%AC%BE" target="_blank">内增高</a>
+								<a href="http://www.okbuy.com/search?top_key=%E9%A9%AC%E4%B8%81%E9%9D%B4&filter_value_key_property_key_1=2" target="_blank">马丁靴</a>
+								<a href="http://www.okbuy.com/shoe/156-0-0-0-0-346-0-0/else-ordv3" target="_blank">及踝靴</a>
+								<a href="http://www.okbuy.com/shoe/162" target="_blank">女雪地靴</a>
+					</p>
+					<h4>春秋款</h4>
+					<p>
+						<a href="http://www.okbuy.com/shoe/157" target="_blank">休闲鞋</a>
+								<a href="http://www.okbuy.com/shoe/155-0-0-0-0-0-327" target="_blank">满帮女鞋</a>
+								<a href="http://www.okbuy.com/shoe/155-0-0-0-0-0-328" target="_blank">浅口女鞋</a>
+								<a href="http://www.okbuy.com/shoe/161" target="_blank">帆布鞋</a>
+								<a href="http://www.okbuy.com/shoe/350" target="_blank">户外鞋</a>
+								<a href="http://www.okbuy.com/search?top_key=%E5%A6%88%E5%A6%88%E9%9E%8B&ref=input" target="_blank">妈妈鞋</a>
+								<a href="http://www.okbuy.com/search?top_key=内增高女鞋&category_third_id=157&filter_value_key_property_key_1=2" target="_blank">内增高</a>
+								<a href="http://www.okbuy.com/search?top_key=%E5%A5%97%E8%84%9A&category_third_id=157" target="_blank">乐福鞋</a>
+								<a href="http://www.okbuy.com/shoe/348" target="_blank">家居鞋</a>
+					</p>
+					<h4>夏季款</h4>
+					<p>
+						<a href="http://www.okbuy.com/shoe/159-11v371" target="_blank">全凉鞋</a>
+								<a href="http://www.okbuy.com/shoe/159-11v370" target="_blank">鱼嘴鞋</a>
+								<a href="http://www.okbuy.com/shoe/159-11v369" target="_blank">女凉拖</a>
+								<a href="http://www.okbuy.com/shoe/159-11v372" target="_blank">后空鞋</a>
+								<a href="http://www.okbuy.com/shoe/159-11v325" target="_blank">人字拖</a>
+								<a href="http://www.okbuy.com/shoe/159-16v238" target="_blank">平底凉鞋</a>
+                                <a href="http://www.okbuy.com/shoe/155-0-0-0-0-0-328" target="_blank">浅口单鞋</a>
+					</p>
+				</div>
+				<div class="manshoes_right  nav_com_con">
+					<h3>品牌导购</h3>
+					<img src="img/44b65d69e8aa71608ddca404a55cc856.png" alt="" usemap="#manshoesmap" border='0'  />
+					<map name="manshoesmap" id="manshoesmap" >
+							<area shape="rect" coords="9,5,63,52" href="http://www.okbuy.com/brand/crocs" target="_blank" />
+							<area shape="rect" coords="79,11,154,50" href="http://www.okbuy.com/brand/skechers" target="_blank" />
+							<area shape="rect" coords="167,11,238,47" href="http://www.okbuy.com/brand/nine+west" target="_blank" />
+							<area shape="rect" coords="11,60,73,91" href="http://www.okbuy.com/brand/ecco" target="_blank" />
+							<area shape="rect" coords="86,54,153,94" href="http://www.okbuy.com/brand/playboy" target="_blank" />
+							<area shape="rect" coords="167,56,238,94" href="http://www.okbuy.com/brand/camel" target="_blank" />
+							<area shape="rect" coords="10,97,78,133" href="http://www.okbuy.com/brand/fuguiniao" target="_blank" />
+							<area shape="rect" coords="85,99,155,132" href="http://www.okbuy.com/brand/clarks" target="_blank" />
+							<area shape="rect" coords="164,97,238,131" href="http://www.okbuy.com/brand/aile" target="_blank" />
+							<area shape="rect" coords="10,140,79,172" href="http://www.okbuy.com/brand/comely" target="_blank" />
+							<area shape="rect" coords="86,139,161,172" href="http://www.okbuy.com/brand/st&sat" target="_blank" />
+							<area shape="rect" coords="170,136,237,174" href="http://www.okbuy.com/brand/plo-cart" target="_blank" />
+							<area shape="rect" coords="3,178,77,214" href="http://www.okbuy.com/brand/red%20dragonfly" target="_blank" />
+							<area shape="rect" coords="78,182,157,216" href="http://www.okbuy.com/brand/aokang" target="_blank" />
+							<area shape="rect" coords="165,181,235,214" href="http://www.okbuy.com/brand/cele" target="_blank" />
+							<area shape="rect" coords="6,222,74,257" href="http://www.okbuy.com/brand/d:fuse" target="_blank" />
+							<area shape="rect" coords="79,223,155,259" href="http://www.okbuy.com/brand/dickies" target="_blank" />
+							<area shape="rect" coords="167,218,237,261" href="http://www.okbuy.com/brand/fed" target="_blank" />
+							<area shape="rect" coords="5,261,74,293" href="http://www.okbuy.com/brand/pathfinder" target="_blank" />
+							<area shape="rect" coords="78,264,155,295" href="http://www.okbuy.com/brand/kiss+cat" target="_blank" />
+							<area shape="rect" coords="165,265,237,295" href="http://www.okbuy.com/brand/naturalizer" target="_blank" />
+							<area shape="rect" coords="6,301,81,335" href="http://www.okbuy.com/brand/leaveland" target="_blank" />
+                            <area shape="rect" coords="167,303,239,333" href="http://www.okbuy.com/brand/steve+madden" target="_blank" />
+                            <area shape="rect" coords="82,301,159,332" href="http://www.okbuy.com/brand/mulinsen" target="_blank" />
+					</map>
+				</div>
+			</div>
+			<!-----child-->
+			<div class="child nav_com">
+				<span></span>
+				<div class="child_left nav_com_con">
+					<h3>品类导购</h3>
+					<h4>儿童鞋靴</h4>
+					<p>
+						<a href="http://www.okbuy.com/shoe/285" target="_blank">儿童运动鞋</a>
+								<a href="http://www.okbuy.com/shoe/282" target="_blank">儿童休闲鞋</a>
+								<a href="http://www.okbuy.com/shoe/427" target="_blank">儿童跑步鞋</a>
+								<a href="http://www.okbuy.com/shoe/279" target="_blank">儿童户外鞋</a>
+								<a href="http://www.okbuy.com/shoe/458" target="_blank">儿童训练鞋</a>
+								<a href="http://www.okbuy.com/shoe/428" target="_blank">儿童篮球鞋</a>
+								<a href="http://www.okbuy.com/shoe/280" target="_blank">儿童凉鞋</a>
+								<a href="http://www.okbuy.com/shoe/465" target="_blank">儿童沙滩鞋</a>
+								<a href="http://www.okbuy.com/shoe/281" target="_blank">儿童时装鞋</a>
+								<a href="http://www.okbuy.com/shoe/306" target="_blank">学步鞋</a>
+                                <a href="http://www.okbuy.com/shoe/283" target="_blank">童靴</a>
+					</p>
+					<h4>儿童服装</h4>
+					<p>
+						<a href="http://www.okbuy.com/clothes/307" target="_blank">儿童T恤</a>
+								<a href="http://www.okbuy.com/clothes/289" target="_blank">儿童衬衫</a>
+								<a href="http://www.okbuy.com/clothes/290" target="_blank">儿童卫衣</a>
+								<a href="http://www.okbuy.com/clothes/294" target="_blank">儿童针织衫</a>
+								<a href="http://www.okbuy.com/clothes/347" target="_blank">儿童棉服</a>
+								<a href="http://www.okbuy.com/clothes/296" target="_blank">儿童马甲/背心</a>
+								<a href="http://www.okbuy.com/clothes/292" target="_blank">儿童外套/夹克</a>
+								<a href="http://www.okbuy.com/clothes/299" target="_blank">儿童裤子</a>
+								<a href="http://www.okbuy.com/clothes/300" target="_blank">儿童牛仔裤</a>
+					</p>
+					
+				</div>
+				<div class="child_mid  nav_com_con">
+					<h3>年龄导购</h3>
+					<p>
+						<a href="http://www.okbuy.com/shoe/276-22v393" target="_blank">小童（2-6岁）</a>
+								<a href="http://www.okbuy.com/shoe/276-22v394" target="_blank">中童（6-12岁）</a>
+								<a href="http://www.okbuy.com/shoe/276-22v395" target="_blank">大童（大于12岁）</a>
+					</p>
+					
+				</div>
+				<div class="child_right  nav_com_con">
+					<h3>品牌导购</h3>
+					<img src="img/0e88d5b3c335503ea4bfaa9f18d43af4.png" alt="" usemap="#childmap" border='0'  />
+					<map name="childmap" id="childmap" >
+							<area shape="rect" coords="82,14,152,49" href="http://www.okbuy.com/brand/adidas?category=276" target="_blank" />
+							<area shape="rect" coords="164,14,235,50" href="http://www.okbuy.com/brand/361%C2%B0?category=276&ref=361" target="_blank" />
+							<area shape="rect" coords="7,53,75,89" href="http://www.okbuy.com/brand/belle" target="_blank" />
+							<area shape="rect" coords="86,51,153,97" href="http://www.okbuy.com/brand/crocs?category=276" target="_blank" />
+							<area shape="rect" coords="166,56,238,89" href="http://www.okbuy.com/brand/camel?category=276" target="_blank" />
+							<area shape="rect" coords="4,97,72,129" href="http://www.okbuy.com/brand/ecco?category=276" target="_blank" />
+							<area shape="rect" coords="92,99,153,136" href="http://www.okbuy.com/brand/disney" target="_blank" />
+							<area shape="rect" coords="169,99,232,130" href="http://www.okbuy.com/brand/barbie" target="_blank" />
+							<area shape="rect" coords="10,138,73,170" href="http://www.okbuy.com/brand/jeep" target="_blank" />
+							<area shape="rect" coords="92,141,159,176" href="http://www.okbuy.com/brand/bob+dog" target="_blank" />
+					</map>
+				</div>
+			</div>
+			<!--global-->
+			<div class="global nav_com">
+				<span></span>
+				<div class="global_left nav_com_con">
+					<h3>常用</h3>
+					<p>
+						<a href="http://www.okbuy.com/topic/show/17803" target="_blank">查看全部</a>
+								<a href="http://www.okbuy.com/topic/show/17808" target="_blank">上新</a>
+							<a href="http://www.okbuy.com/topic/show/17818" target="_blank">千元尖货</a> <a href="http://www.okbuy.com/topic/show/18637" target="_blank">断码清仓</a></p>
+					</p>
+					<h4><a href="">服饰</a></h4>
+					<p>
+						 <a href="http://www.okbuy.com//topic/show/16582" target="_blank">长袖</a>
+								<a href="http://www.okbuy.com//topic/show/16571" target="_blank">T恤</a>
+								<a href="http://www.okbuy.com//topic/show/16576" target="_blank">POLO</a>
+								<a href="http://www.okbuy.com//topic/show/16577" target="_blank">衬衫</a>
+								<a href="http://www.okbuy.com/topic/show/16585" target="_blank">卫衣</a>
+                                <a href="http://www.okbuy.com/topic/show/16583" target="_blank">针织衫</a> 
+                                <a href="http://www.okbuy.com/topic/show/17830" target="_blank">外套</a>
+                                <a href="http://www.okbuy.com/topic/show/17150" target="_blank">牛仔裤</a>
+                                <a href="http://www.okbuy.com/topic/show/17152" target="_blank">休闲裤</a>
+								
+								<a href="http://www.okbuy.com/topic/show/17149" target="_blank">跑裤</a>
+								<a href="http://www.okbuy.com/topic/show/17153" target="_blank">健身服</a>
+								<a href="http://www.okbuy.com/topic/show/17151" target="_blank">短裤</a>
+                                <a href="http://www.okbuy.com/topic/show/17831" target="_blank">内衣</a>
+					</p>
+					<h4><a href="">鞋靴</a></h4>
+					<p>
+						<a href="http://www.okbuy.com/topic/show/18579" target="_blank">Air Jordan球鞋</a>
+                                <a href="http://www.okbuy.com/p-adidas-originals/detail-shoe-17418585.html" target="_blank">Yeezy侃爷椰子</a>
+                                 <a href="http://www.okbuy.com/p-adidas-originals/detail-shoe-17418584.html" target="_blank">NMD</a>
+                                <a href="http://www.okbuy.com/p-nike/detail-shoe-17418250.html" target="_blank">Nike喷泡</a>
+                                <a href="http://www.okbuy.com/p-adidas-originals/detail-shoe-17369340.html" target="_blank">Stan Smith绿尾</a>
+								<a href="http://www.okbuy.com/p-adidas-originals/detail-shoe-17369343.html" target="_blank">Super Star贝壳头</a>
+                                <a href="http://www.okbuy.com/p-nike/detail-shoe-17369417.html" target="_blank">GD澡堂拖</a>
+								<a href="http://www.okbuy.com/p-asics/detail-shoe-17350749.html" target="_blank">Asics日本跑鞋</a>
+								<a href="http://www.okbuy.com/brand/under+armour?category=47&sort=sale_date_desc&category_third_id=52" target="_blank">库里战靴</a>
+								<a href="http://www.okbuy.com/p-nike/detail-shoe-17366283.html" target="_blank">AJ童鞋</a>
+					</p>
+					<h4><a href="">包袋</a></h4>
+					<p>
+						<a href="http://www.okbuy.com/topic/show/18638" target="_blank">钱包</a>
+								<a href="http://www.okbuy.com/topic/show/18639" target="_blank">挎包</a>
+								<a href="http://www.okbuy.com/topic/show/17835" target="_blank">提包</a>
+                                <a href="http://www.okbuy.com/topic/show/17837" target="_blank">背包</a>
+                                <a href="http://www.okbuy.com/p-coach/detail-bag-17386052.html" target="_blank">COACH</a>
+                                <a href="http://www.okbuy.com/p-furla/detail-bag-17416701.html" target="_blank">果冻包</a>
+					</p>
+					
+				</div>
+				<div class="global_mid  nav_com_con">
+					<h3>活动</h3>
+					<img src="http://i.okaybuy.cn/images/multipic/new/201612/5f/5f632c5f24549ac31bb838f9449d7252.jpg" alt="" width="523" height="345" border="0" usemap="#globalmap">
+					<map name="globalmap" id="globalmap">
+						<area shape="rect" coords="2,3,240,80" href="http://www.okbuy.com/topic/show/52372" target="_blank">
+						<area shape="rect" coords="285,1,523,80" href="http://www.okbuy.com/topic/show/52374" target="_blank">
+						<area shape="rect" coords="25,108,254,239" href="http://www.okbuy.com/topic/show/52675" target="_blank">
+						<area shape="rect" coords="278,104,502,239" href="http://www.okbuy.com/topic/show/52371" target="_blank">
+						<area shape="rect" coords="1,262,239,352" href="http://www.okbuy.com/topic/show/52670" target="_blank">
+						<area shape="rect" coords="285,265,523,342" href="http://www.okbuy.com/topic/show/52375" target="_blank">
+					</map>
+				</div>
+				<div class="global_right nav_com_con">
+					<h3>品牌</h3>
+					<img src="img/7e91d93b32b1d71b0f95f12b5b50883d.jpg" alt="" usemap="#globalmap" border='0'  />
+					<map name="globalmap" id="globalmap" >
+							<area shape="rect" coords="7,5,79,53" href="http://www.okbuy.com/brand/calvin+klein?category=67&sort=sale_date_desc" target="_blank" />
+						<area shape="rect" coords="11,14,67,48" href="http://www.okbuy.com//topic/show/16592" target="_blank" />
+							<area shape="rect" coords="93,9,152,49" href="http://www.okbuy.com/brand/tommy+hilfiger?category=67&sort=sale_date_desc" target="_blank" />
+							<area shape="rect" coords="164,5,229,55" href="http://www.okbuy.com/brand/ralph lauren?category=67&sort=sale_date_desc" target="_blank" />
+							<area shape="rect" coords="7,57,77,103" href="http://www.okbuy.com/brand/under%20armour?category=67&sort=sale_date_desc" target="_blank" />
+							<area shape="rect" coords="91,51,155,102" href="http://www.okbuy.com//topic/show/50830" target="_blank" />
+							<area shape="rect" coords="157,60,229,105" href="http://www.okbuy.com/search?top_key=%E4%B8%89%E5%8F%B6%E8%8D%89+%E5%85%A8%E7%90%83%E8%B4%AD&ref=input" target="_blank" />
+							<area shape="rect" coords="9,106,77,138" href="http://www.okbuy.com/search?top_key=asics+全球购&ref=input" target="_blank" />
+							<area shape="rect" coords="89,103,153,144" href="http://www.okbuy.com/topic/show/17046" target="_blank" />
+							<area shape="rect" coords="159,107,236,141" href="http://www.okbuy.com/search?top_key=timberland+%E5%85%A8%E7%90%83%E8%B4%AD&ref=input" target="_blank" />
+							<area shape="rect" coords="9,145,74,187" href="http://www.okbuy.com/brand/armani+exchange" target="_blank" />
+							<area shape="rect" coords="87,147,156,190" href="http://www.okbuy.com/brand/abercrombie%26fitch?category=67&sort=sale_date_desc" target="_blank" />
+					  <area shape="rect" coords="167,146,234,193" href="http://www.okbuy.com/brand/geox" target="_blank">
+					  <area shape="rect" coords="10,191,77,230" href="http://www.okbuy.com/topic/show/51762" target="_blank">
+					  <area shape="rect" coords="165,318,236,348" href="http://www.okbuy.com/brand/dkny?category=67&sort=sale_date_desc" target="_blank"><area shape="rect" coords="87,198,157,234" href="http://www.okbuy.com/topic/show/51587" target="_blank">
+					  <area shape="rect" coords="165,195,233,233" href="http://www.okbuy.com/brand/hollister?category=67&sort=sale_date_desc" target="_blank">
+					  <area shape="rect" coords="12,238,75,274" href="http://www.okbuy.com/brand/j.crew" target="_blank">
+					  <area shape="rect" coords="92,237,155,275" href="http://www.okbuy.com/topic/show/52807" target="_blank">
+					  <area shape="rect" coords="163,236,235,271" href="http://www.okbuy.com/brand/keds" target="_blank">
+					  <area shape="rect" coords="11,276,77,306" href="http://www.okbuy.com/brand/anello" target="_blank">
+					  <area shape="rect" coords="84,281,160,306" href="http://www.okbuy.com/search?top_key=匡威+全球购&ref=input" target="_blank">
+					  <area shape="rect" coords="92,309,156,353" href="http://www.okbuy.com/brand/kipling?category=68&sort=price_terminal_1_desc" target="_blank">
+					<area shape="rect" coords="165,272,233,312" href="http://www.okbuy.com/brand/puma?http://okbuy.com/search?top_key=puma+%E5%85%A8%E7%90%83%E8%B4%AD&ref=input" target="_blank">
+					  <area shape="rect" coords="10,313,82,347" href="http://www.okbuy.com/brand/coach" target="_blank">
+					</map>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	
+	</body>
+</html>
